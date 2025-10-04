@@ -122,9 +122,12 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    /* height: 100%; */
+    
 }
 
+.profile__toggle__option {
+    transition: color 0.4s;
+}
 .profile__toggle__option:hover {
     color: white;
     cursor: pointer;
@@ -156,11 +159,11 @@ main {
     position: relative;
     /* top: 20%; */
     border-radius: 15px 15px 0em 0em;
+    transition: background-color 0.3s;
 }
 .subcontainer__text:hover {
     background-color: var(--Navy800);
 }
-
 
 .subtitle__container {
     display: flex;
@@ -170,6 +173,7 @@ main {
     justify-content: space-between;
     & a {
         height: 1em;
+        transition: filter 0.4s;
     }
     & a:hover {
         filter: brightness(200%);
