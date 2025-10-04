@@ -12,6 +12,7 @@
 /* Neutral */
 --Navy950: hsl(226, 43%, 10%);
 --Navy900: hsl(235, 46%, 20%);
+--Navy800: hsl(235, 46%, 30%);
 --Purple500: hsl(235, 45%, 61%);
 --Navy200: hsl(236, 100%, 87%);
 
@@ -124,6 +125,11 @@ main {
     /* height: 100%; */
 }
 
+.profile__toggle__option:hover {
+    color: white;
+    cursor: pointer;
+}
+
 .profile__reportFor, .profile__toggle {
     padding: 2em;
     border-radius: 15px;
@@ -132,7 +138,6 @@ main {
 .subcontainer {
     border-radius: 15px;
     overflow: hidden;
-    /* height: 83%; */
 }
 
 .subcontainer__img  {
@@ -145,13 +150,17 @@ main {
 }
 
 .subcontainer__text {
-    height: 80%;
+    height: 83%;
     background-color: var(--Navy900);
     padding: 2em;
     position: relative;
     /* top: 20%; */
     border-radius: 15px 15px 0em 0em;
 }
+.subcontainer__text:hover {
+    background-color: var(--Navy800);
+}
+
 
 .subtitle__container {
     display: flex;
@@ -160,9 +169,10 @@ main {
     padding-right: auto;
     justify-content: space-between;
     & a {
-        /* align-self: flex-end; */
-        /* border: 1px solid red; */
         height: 1em;
+    }
+    & a:hover {
+        filter: brightness(200%);
     }
 
 }
