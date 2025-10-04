@@ -93,7 +93,7 @@ main {
         'profile exercise social selfCare';
     gap: 2em;
     /* background-color: aqua; */
-    height: 65%;
+    /* height: 65%; */
     max-height: 540px;
     min-width: 910px;
 }
@@ -101,14 +101,16 @@ main {
 .profile {
     background-color: var(--Navy900);
     border-radius: 15px;
-    /* height: 80%; */
+    height: 100%;
     /* overflow: hidden; */
 }
 
 .profile__reportFor {
     background-color: var(--Purple600);
+    display: flex;
+    flex-direction: column;
     & img {
-        width: 40%;
+        width: 5em;
         border: 3px solid white;
         border-radius: 1000px;
         margin-bottom: 2em;
@@ -123,7 +125,7 @@ main {
 }
 
 .profile__reportFor, .profile__toggle {
-    padding: 40px;
+    padding: 2em;
     border-radius: 15px;
 }
 
@@ -145,7 +147,7 @@ main {
 .subcontainer__text {
     height: 80%;
     background-color: var(--Navy900);
-    padding: 30px;
+    padding: 2em;
     position: relative;
     /* top: 20%; */
     border-radius: 15px 15px 0em 0em;
@@ -165,6 +167,11 @@ main {
 
 }
 
+.subcontainer__text__stats {
+    display: flex;
+    flex-direction: column;
+}
+
 /* show daily by default */
 .daily, .daily__previous {
     display: block;
@@ -177,25 +184,94 @@ main {
 .profile { grid-area: profile; }
 .work { 
     grid-area: work; 
-    background-image: linear-gradient(to bottom, var(--Orange300) 50%, var(--Navy900) 70%);
+    background-image: url('/images/icon-work.svg'), linear-gradient(to bottom, var(--Orange300) 50%, var(--Navy900) 70%);
 }
 .play { 
     grid-area: play; 
-    background-image: linear-gradient(to bottom, var(--Blue300) 50%, var(--Navy900) 80%);
+    background-image: url('/images/icon-play.svg'), linear-gradient(to bottom, var(--Blue300) 50%, var(--Navy900) 70%);
 }
 .study { 
     grid-area: study;
-    background-image: linear-gradient(to bottom, var(--Pink400) 50%, var(--Navy900) 80%);
+    background-image: url('/images/icon-study.svg'), linear-gradient(to bottom, var(--Pink400) 50%, var(--Navy900) 70%);
 }
 .exercise { 
     grid-area: exercise; 
-    background-image: linear-gradient(to bottom, var(--Green400) 50%, var(--Navy900) 80%);
+    background-image: url('/images/icon-exercise.svg'), linear-gradient(to bottom, var(--Green400) 50%, var(--Navy900) 70%);
 }
 .social { 
     grid-area: social; 
-    background-image: linear-gradient(to bottom, var(--Purple700) 50%, var(--Navy900) 80%);
+    background-image: url('/images/icon-social.svg'), linear-gradient(to bottom, var(--Purple700) 50%, var(--Navy900) 70%);
 }
 .selfCare { 
     grid-area: selfCare; 
-    background-image: linear-gradient(to bottom, var(--Yellow300) 50%, var(--Navy900) 80%);
+    background-image: url('/images/icon-self-care.svg'), linear-gradient(to bottom, var(--Yellow300) 50%, var(--Navy900) 70%);
+}
+.subcontainer {
+    background-repeat: no-repeat;
+    background-position: 80% -5%;
+}
+
+
+@media screen and (max-width: 910px) {
+    h1 {
+        padding-bottom: 0;
+    }
+    
+    body {
+        /* background-color: aqua; */
+        overflow: scroll;
+        align-items: flex-start;
+        /* justify-items: center; */
+        height: 100%;
+        width: 98vw;
+        padding: 20px 0;
+    }
+
+    footer {
+        margin: 0 auto;
+    }
+
+    .container {
+        /* background-color: aqua; */
+         grid-template-columns: 100%;
+         /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+         grid-template-rows: none;
+        grid-template-areas: 
+        'profile' 'work' 'play' 'study'
+        'exercise' 'social' 'selfCare';
+        width: 100%;
+        max-height: 100%;
+        min-width: 345px;
+        max-width: 630px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .profile__reportFor {
+        flex-direction: row;
+        align-items: center;
+        gap: 2em;
+        & img {
+            margin: auto 0;
+            /* width: auto; */
+            /* height: 100%; */
+        }
+        & .profile__reportFor__text p {
+            margin: auto 0;
+        }
+    }
+
+    .profile__toggle {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1.25em ;
+    }
+
+    .subcontainer__text__stats {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-bottom: 2em;
+    }
+
 }
