@@ -1,0 +1,201 @@
+:root {
+/* Primary */
+--Purple600: hsl(246, 80%, 60%);
+
+--Orange300 : hsl(15, 100%, 70%); 
+--Blue300 : hsl(195, 74%, 62%);
+--Pink400 : hsl(348, 100%, 68%);
+--Green400 : hsl(145, 58%, 55%);
+--Purple700 : hsl(264, 64%, 52%);
+--Yellow300 : hsl(43, 84%, 65%);
+
+/* Neutral */
+--Navy950: hsl(226, 43%, 10%);
+--Navy900: hsl(235, 46%, 20%);
+--Purple500: hsl(235, 45%, 61%);
+--Navy200: hsl(236, 100%, 87%);
+
+/* font weights */
+--fw300: 300;
+--fw400: 400;
+--fw500: 500;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  padding: 0;
+  margin: 0;
+}
+
+/* name */
+h1 {
+    font-size: 2.5em;
+    font-weight: var(--fw300);
+    padding-bottom: 1em;
+}
+
+/* small text */
+p {
+    color: var(--Navy200);
+    margin-bottom: .5em;
+}
+
+/* hours */
+h2 {
+    font-size: 3rem;
+    font-weight: var(--fw300);
+}
+
+/* subtitles: work, play, study etc. */
+h3 {
+    font-weight: var(--fw500);
+    font-size: 1.125rem;
+    padding-bottom: 1.5em;
+}
+
+/* toggle text */
+h4 {
+    font-size: 1.25rem;
+    font-weight: var(--fw300);
+    color: var(--Purple500);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--Navy950);
+    color: white;
+}
+
+main {
+    width: 60%;
+    max-width: 1100px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        'profile work play study'
+        'profile exercise social selfCare';
+    gap: 2em;
+    /* background-color: aqua; */
+    height: 65%;
+    max-height: 540px;
+    min-width: 910px;
+}
+
+.profile {
+    background-color: var(--Navy900);
+    border-radius: 15px;
+    /* height: 80%; */
+    /* overflow: hidden; */
+}
+
+.profile__reportFor {
+    background-color: var(--Purple600);
+    & img {
+        width: 40%;
+        border: 3px solid white;
+        border-radius: 1000px;
+        margin-bottom: 2em;
+    }
+}
+
+.profile__toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* height: 100%; */
+}
+
+.profile__reportFor, .profile__toggle {
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.subcontainer {
+    border-radius: 15px;
+    overflow: hidden;
+    /* height: 83%; */
+}
+
+.subcontainer__img  {
+    height: 17%;
+    & img {
+        position: relative;
+        right: -55%;
+        top: -15%;
+    }
+}
+
+.subcontainer__text {
+    height: 80%;
+    background-color: var(--Navy900);
+    padding: 30px;
+    position: relative;
+    /* top: 20%; */
+    border-radius: 15px 15px 0em 0em;
+}
+
+.subtitle__container {
+    display: flex;
+    flex-direction: row;
+    /* background-color: aqua; */
+    padding-right: auto;
+    justify-content: space-between;
+    & a {
+        /* align-self: flex-end; */
+        /* border: 1px solid red; */
+        height: 1em;
+    }
+
+}
+
+/* show daily by default */
+.daily, .daily__previous {
+    display: block;
+}
+.weekly, .weekly__previous, .monthly, .monthly__previous {
+    display: none;
+}
+
+/* unique background colour and image for each subsection */
+.profile { grid-area: profile; }
+.work { 
+    grid-area: work; 
+    background-image: linear-gradient(to bottom, var(--Orange300) 50%, var(--Navy900) 70%);
+}
+.play { 
+    grid-area: play; 
+    background-image: linear-gradient(to bottom, var(--Blue300) 50%, var(--Navy900) 80%);
+}
+.study { 
+    grid-area: study;
+    background-image: linear-gradient(to bottom, var(--Pink400) 50%, var(--Navy900) 80%);
+}
+.exercise { 
+    grid-area: exercise; 
+    background-image: linear-gradient(to bottom, var(--Green400) 50%, var(--Navy900) 80%);
+}
+.social { 
+    grid-area: social; 
+    background-image: linear-gradient(to bottom, var(--Purple700) 50%, var(--Navy900) 80%);
+}
+.selfCare { 
+    grid-area: selfCare; 
+    background-image: linear-gradient(to bottom, var(--Yellow300) 50%, var(--Navy900) 80%);
+}
