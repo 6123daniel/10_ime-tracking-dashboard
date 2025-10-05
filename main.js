@@ -1,6 +1,7 @@
 let subtitles = ['work','play','study','exercise','social','selfCare'];
 let period = ['daily','weekly','monthly'];
 let time = ['current','previous'];
+let previousText;
 
 fetch('data.json').then((response) => {
     if(!response.ok) return console.log('Error retrieving data.json');
@@ -17,6 +18,15 @@ fetch('data.json').then((response) => {
 
         // for each period ['daily','weekly','monthly']
         for (let j=0; j<period.length; j++){
+            if(period[j]==='daily'){
+                previousText = 'yesterday';
+            }
+            else if(period[j]==='weekly'){
+                previousText = 'last week';
+            }
+            else {
+                previousText = 'last month';
+            } 
 
             // current or previous
             for (let k=0; k<time.length; k++){
@@ -24,7 +34,7 @@ fetch('data.json').then((response) => {
                     document.getElementById(subtitles[i] + '__' + period[j]).innerHTML = (data[i]['timeframes'][period[j]][time[k]]) + 'hrs';
                 }
                 else if (time[k] === 'previous'){
-                    document.getElementById(subtitles[i] + '__' + period[j] + '__previous').innerHTML = ('last week - ' + data[i]['timeframes'][period[j]][time[k]]  + 'hrs');
+                    document.getElementById(subtitles[i] + '__' + period[j] + '__previous').innerHTML = (previousText + ' ' + data[i]['timeframes'][period[j]][time[k]]  + 'hrs');
                 }
             }
         }
