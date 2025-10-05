@@ -19,13 +19,13 @@ fetch('data.json').then((response) => {
         // for each period ['daily','weekly','monthly']
         for (let j=0; j<period.length; j++){
             if(period[j]==='daily'){
-                previousText = 'yesterday';
+                previousText = 'Yesterday - ';
             }
             else if(period[j]==='weekly'){
-                previousText = 'last week';
+                previousText = 'Last Week - ';
             }
             else {
-                previousText = 'last month';
+                previousText = 'Last Month - ';
             } 
 
             // current or previous
@@ -34,7 +34,7 @@ fetch('data.json').then((response) => {
                     document.getElementById(subtitles[i] + '__' + period[j]).innerHTML = (data[i]['timeframes'][period[j]][time[k]]) + 'hrs';
                 }
                 else if (time[k] === 'previous'){
-                    document.getElementById(subtitles[i] + '__' + period[j] + '__previous').innerHTML = (previousText + ' ' + data[i]['timeframes'][period[j]][time[k]]  + 'hrs');
+                    document.getElementById(subtitles[i] + '__' + period[j] + '__previous').innerHTML = (previousText + data[i]['timeframes'][period[j]][time[k]]  + 'hrs');
                 }
             }
         }
