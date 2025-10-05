@@ -203,27 +203,27 @@ main {
 .profile { grid-area: profile; }
 .work { 
     grid-area: work; 
-    background-image: url('/images/icon-work.svg'), linear-gradient(to bottom, var(--Orange300) 50%, var(--Navy900) 70%);
+    background-image: url('images/icon-work.svg'), linear-gradient(to bottom, var(--Orange300) 50%, var(--Navy900) 70%);
 }
 .play { 
     grid-area: play; 
-    background-image: url('/images/icon-play.svg'), linear-gradient(to bottom, var(--Blue300) 50%, var(--Navy900) 70%);
+    background-image: url('images/icon-play.svg'), linear-gradient(to bottom, var(--Blue300) 50%, var(--Navy900) 70%);
 }
 .study { 
     grid-area: study;
-    background-image: url('/images/icon-study.svg'), linear-gradient(to bottom, var(--Pink400) 50%, var(--Navy900) 70%);
+    background-image: url('images/icon-study.svg'), linear-gradient(to bottom, var(--Pink400) 50%, var(--Navy900) 70%);
 }
 .exercise { 
     grid-area: exercise; 
-    background-image: url('/images/icon-exercise.svg'), linear-gradient(to bottom, var(--Green400) 50%, var(--Navy900) 70%);
+    background-image: url('images/icon-exercise.svg'), linear-gradient(to bottom, var(--Green400) 50%, var(--Navy900) 70%);
 }
 .social { 
     grid-area: social; 
-    background-image: url('/images/icon-social.svg'), linear-gradient(to bottom, var(--Purple700) 50%, var(--Navy900) 70%);
+    background-image: url('images/icon-social.svg'), linear-gradient(to bottom, var(--Purple700) 50%, var(--Navy900) 70%);
 }
 .selfCare { 
     grid-area: selfCare; 
-    background-image: url('/images/icon-self-care.svg'), linear-gradient(to bottom, var(--Yellow300) 50%, var(--Navy900) 70%);
+    background-image: url('images/icon-self-care.svg'), linear-gradient(to bottom, var(--Yellow300) 50%, var(--Navy900) 70%);
 }
 .subcontainer {
     background-repeat: no-repeat;
